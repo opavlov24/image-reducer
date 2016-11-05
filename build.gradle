@@ -9,5 +9,6 @@ mainClassName = "tech.letscode.imagereducer.Application"
 
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.21'
+    compile 'commons-io:commons-io:2.5'
     testCompile 'junit:junit:4.12'
 }
