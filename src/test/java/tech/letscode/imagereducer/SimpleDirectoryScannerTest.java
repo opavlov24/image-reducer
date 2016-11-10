@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertTrue;
+import static tech.letscode.imagereducer.TestUtils.rootDirectory;
 
 public class SimpleDirectoryScannerTest
 {
@@ -30,10 +31,5 @@ public class SimpleDirectoryScannerTest
         assertTrue(foundFiles.size() == 1);
         File foundFile = foundFiles.get(0);
         assertTrue(foundFile.getName().equalsIgnoreCase("notReducedImage.jpeg"));
-    }
-
-    private String rootDirectory()
-    {
-        return getClass().getClassLoader().getResource("image").getFile();
     }
 }

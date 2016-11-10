@@ -9,6 +9,7 @@ import static java.io.File.separator;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static tech.letscode.imagereducer.DirectoryUtils.pathWithoutFilename;
+import static tech.letscode.imagereducer.TestUtils.loadOriginalFile;
 
 public class SimpleOutputFileResolverTest
 {
@@ -29,11 +30,6 @@ public class SimpleOutputFileResolverTest
     private String expectedPath(File originalFile)
     {
         return pathWithoutFilename(originalFile) + separator + OUT_DIRECTORY + separator + originalFile.getName();
-    }
-
-    private File loadOriginalFile()
-    {
-        return new File(getClass().getClassLoader().getResource("image/notReducedImage.jpeg").getFile());
     }
 
     @After

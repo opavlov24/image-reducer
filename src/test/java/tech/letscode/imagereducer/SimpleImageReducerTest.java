@@ -5,9 +5,10 @@ import org.junit.Test;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.nio.file.Files;
 
 import static org.junit.Assert.assertTrue;
+import static tech.letscode.imagereducer.TestUtils.loadOriginalFile;
+import static tech.letscode.imagereducer.TestUtils.temporaryFile;
 
 public class SimpleImageReducerTest
 {
@@ -15,25 +16,12 @@ public class SimpleImageReducerTest
     public void reduce() throws URISyntaxException, IOException
     {
         SimpleImageReducer imageReducer = new SimpleImageReducer();
-        File originalImage = loadTestImage();
+        File originalImage = loadOriginalFile();
         long originalSize = originalImage.length();
-        File compressedImage = createOutputImageFile();
+        File compressedImage = temporaryFile();
         imageReducer.reduce(originalImage, compressedImage, 0.1f);
         long compressedSize = compressedImage.length();
         assertTrue(compressedSize != 0);
         assertTrue(compressedSize < originalSize);
     }
-
-    private File loadTestImage() throws URISyntaxException
-    {
-        return new File(getClass().getClassLoader().getResource("image/notReducedImage.jpeg").toURI());
-    }
-
-    private File createOutputImageFile() throws IOException
-    {
-        File outImage = Files.createTempFile(null, null).toFile();
-        outImage.deleteOnExit();
-        return outImage;
-    }
-
 }
