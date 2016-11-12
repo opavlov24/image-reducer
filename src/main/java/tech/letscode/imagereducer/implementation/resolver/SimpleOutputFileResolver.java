@@ -20,13 +20,15 @@ public class SimpleOutputFileResolver implements OutputFileResolver
     }
 
     @Override
-    public File resolveFileBasedOnOriginal(File originalFile)
+    public File resolveFileBasedOnOriginal(@Nonnull File originalFile)
     {
         File outputFile = new File(buildPathToOutputFile(originalFile));
-        try {
+        try
+        {
             outputFile.getParentFile().mkdirs();
             outputFile.createNewFile();
-        } catch (IOException e) {
+        } catch (IOException e)
+        {
             throw new OutputFileResolverException("IO Exception has been occurred while creating output file", e);
         }
         return outputFile;

@@ -4,8 +4,8 @@ import javax.annotation.Nonnull;
 
 public interface DirectoryScanner
 {
-    public void scan(@Nonnull String rootDirectory, boolean recursively, String... extensions);
+    void scan(@Nonnull String rootDirectory, boolean recursively, String... extensions);
 
-    public void addDirectoryListener(@Nonnull DirectoryListener listener);
+    void addDirectoryListener(@Nonnull DirectoryListener listener);
 
 }

@@ -4,6 +4,7 @@ import org.apache.commons.io.FilenameUtils;
 import tech.letscode.imagereducer.ImageReducer;
 import tech.letscode.imagereducer.exception.ImageReducerException;
 
+import javax.annotation.Nonnull;
 import javax.imageio.IIOImage;
 import javax.imageio.ImageIO;
 import javax.imageio.ImageWriteParam;
@@ -19,14 +20,16 @@ import static org.apache.commons.io.IOUtils.closeQuietly;
 public class SimpleImageReducer implements ImageReducer
 {
     @Override
-    public void reduce(File inImage, File outImage, float quality)
+    public void reduce(@Nonnull File inImage, @Nonnull File outImage, float quality)
     {
         ImageWriter imageWriter = null;
-        try {
+        try
+        {
             imageWriter = getImageWriterFor(inImage);
             ImageWriteParam compressionOptions = setCompressionOptions(quality, imageWriter);
             compress(inImage, outImage, imageWriter, compressionOptions);
-        } finally {
+        } finally
+        {
             closeImageWriter(imageWriter);
         }
     }
@@ -34,15 +37,18 @@ public class SimpleImageReducer implements ImageReducer
     private void compress(File inImage, File outImage, ImageWriter imageWriter, ImageWriteParam defaultWriteParam)
     {
         FileImageOutputStream imageOutputStream = null;
-        try {
+        try
+        {
             imageOutputStream = new FileImageOutputStream(outImage);
             imageWriter.setOutput(imageOutputStream);
             BufferedImage originalImage = ImageIO.read(inImage);
             IIOImage destImage = new IIOImage(originalImage, null, null);
             imageWriter.write(null, destImage, defaultWriteParam);
-        } catch (IOException e) {
+        } catch (IOException e)
+        {
             throw new ImageReducerException("IO exception has been occurred while creating FileImageOutputStream", e);
-        } finally {
+        } finally
+        {
             closeQuietly(imageOutputStream);
         }
     }
@@ -57,7 +63,8 @@ public class SimpleImageReducer implements ImageReducer
 
     private void closeImageWriter(ImageWriter imageWriter)
     {
-        if (imageWriter != null) {
+        if (imageWriter != null)
+        {
             imageWriter.dispose();
         }
     }
@@ -66,7 +73,8 @@ public class SimpleImageReducer implements ImageReducer
     {
         String extension = FilenameUtils.getExtension(inImage.getName());
         Iterator<ImageWriter> imageWriters = ImageIO.getImageWritersByFormatName(extension);
-        if (!imageWriters.hasNext()) {
+        if (!imageWriters.hasNext())
+        {
             throw new RuntimeException("Image reader for " + extension + " has not been found");
         }
         return imageWriters.next();

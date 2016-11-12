@@ -1,8 +1,9 @@
 package tech.letscode.imagereducer;
 
+import javax.annotation.Nonnull;
 import java.io.File;
 
 public interface OutputFileResolver
 {
-    public File resolveFileBasedOnOriginal(File originalFile);
+    File resolveFileBasedOnOriginal(@Nonnull File originalFile);
 }
