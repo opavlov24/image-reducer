@@ -19,7 +19,8 @@ public class Application
     public static void main(String[] args)
     {
         ImageReducerConfiguration configuration = CommandLineConfiguration.build(args);
-        if (configuration != null) {
+        if (configuration != null)
+        {
             ImageReducerApplication application = new ImageReducerApplication(DIRECTORY_SCANNER,
                                                                               IMAGE_REDUCER,
                                                                               OUTPUT_FILE_RESOLVER,

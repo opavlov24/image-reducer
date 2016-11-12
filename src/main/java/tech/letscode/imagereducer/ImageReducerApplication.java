@@ -48,13 +48,16 @@ public class ImageReducerApplication implements DirectoryListener
     public void acceptFile(@Nonnull File originalFile)
     {
         File outputFile = null;
-        try {
+        try
+        {
             outputFile = this.outputFileResolver.resolveFileBasedOnOriginal(originalFile);
             imageReducer.reduce(originalFile, outputFile, this.configuration.quality());
             this.outputView.imageReduced(originalFile);
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             treatException(e, originalFile);
-            if (outputFile != null) {
+            if (outputFile != null)
+            {
                 deleteQuietly(outputFile);
                 deleteQuietly(outputFile.getParentFile());
             }
@@ -63,15 +66,20 @@ public class ImageReducerApplication implements DirectoryListener
 
     private void treatException(Exception exception, File originalFile)
     {
-        if (this.configuration.suppressException()) {
-            if (exception instanceof OutputFileResolverException) {
+        if (this.configuration.suppressException())
+        {
+            if (exception instanceof OutputFileResolverException)
+            {
                 this.outputView.outputFileCannotBeCreatedFor(originalFile);
-            } else if (exception instanceof ImageReducerException) {
+            } else if (exception instanceof ImageReducerException)
+            {
                 this.outputView.originalImageCannotBeReduced(originalFile);
-            } else {
+            } else
+            {
                 this.outputView.unexpectedErrorHasBeenOccurred(exception);
             }
-        } else {
+        } else
+        {
             throw new ImageReducerApplicationException("An error has been occurred", exception);
         }
     }

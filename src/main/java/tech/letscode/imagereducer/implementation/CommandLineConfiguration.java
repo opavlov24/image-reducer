@@ -6,20 +6,27 @@ import tech.letscode.imagereducer.ImageReducerConfiguration;
 public class CommandLineConfiguration
 {
     private static final String ROOT_DIRECTORY_OPT = "directory";
+
     private static final String RECURSIVELY_OPT = "recursively";
+
     private static final String QUALITY_OPT = "quality";
+
     private static final String SUPPRESS_OPT = "suppress";
+
     private static final String EXTENSION_OPT = "extension";
+
     private static final String APPLICATION_NAME = "image-reducer";
 
     public static ImageReducerConfiguration build(String[] args)
     {
         CommandLineParser parser = new DefaultParser();
         Options options = options();
-        try {
+        try
+        {
             CommandLine cl = parser.parse(options, args);
             return buildConfiguration(cl);
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             printHelp(options);
         }
         return null;
@@ -31,7 +38,8 @@ public class CommandLineConfiguration
         ImageReducerConfiguration configuration = new ImageReducerConfiguration(rootDirectory);
         configuration.setRecursively(cl.hasOption(RECURSIVELY_OPT));
         configuration.setSuppressException(cl.hasOption(SUPPRESS_OPT));
-        if (cl.hasOption(QUALITY_OPT)) {
+        if (cl.hasOption(QUALITY_OPT))
+        {
             float quality = Float.parseFloat(cl.getOptionValue(QUALITY_OPT));
             configuration.setQuality(quality);
         }
