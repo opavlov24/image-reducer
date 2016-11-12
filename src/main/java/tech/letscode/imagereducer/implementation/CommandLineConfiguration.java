@@ -1,6 +1,7 @@
-package tech.letscode.imagereducer;
+package tech.letscode.imagereducer.implementation;
 
 import org.apache.commons.cli.*;
+import tech.letscode.imagereducer.ImageReducerConfiguration;
 
 public class CommandLineConfiguration
 {

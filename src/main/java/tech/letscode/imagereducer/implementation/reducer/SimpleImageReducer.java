@@ -1,6 +1,8 @@
-package tech.letscode.imagereducer;
+package tech.letscode.imagereducer.implementation.reducer;
 
 import org.apache.commons.io.FilenameUtils;
+import tech.letscode.imagereducer.ImageReducer;
+import tech.letscode.imagereducer.exception.ImageReducerException;
 
 import javax.imageio.IIOImage;
 import javax.imageio.ImageIO;
@@ -14,7 +16,7 @@ import java.util.Iterator;
 
 import static org.apache.commons.io.IOUtils.closeQuietly;
 
-class SimpleImageReducer implements ImageReducer
+public class SimpleImageReducer implements ImageReducer
 {
     @Override
     public void reduce(File inImage, File outImage, float quality)

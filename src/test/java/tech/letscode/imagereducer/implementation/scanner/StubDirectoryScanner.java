@@ -1,4 +1,7 @@
-package tech.letscode.imagereducer;
+package tech.letscode.imagereducer.implementation.scanner;
+
+import tech.letscode.imagereducer.DirectoryListener;
+import tech.letscode.imagereducer.DirectoryScanner;
 
 import javax.annotation.Nonnull;
 import java.io.File;

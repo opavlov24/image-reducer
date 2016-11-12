@@ -1,4 +1,4 @@
-package tech.letscode.imagereducer;
+package tech.letscode.imagereducer.implementation.reducer;
 
 import org.junit.Test;
 
@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 
 import static org.junit.Assert.assertTrue;
-import static tech.letscode.imagereducer.TestUtils.loadOriginalFile;
-import static tech.letscode.imagereducer.TestUtils.temporaryFile;
+import static tech.letscode.imagereducer.util.TestUtils.loadOriginalFile;
+import static tech.letscode.imagereducer.util.TestUtils.temporaryFile;
 
 public class SimpleImageReducerTest
 {

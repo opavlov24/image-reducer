@@ -1,4 +1,6 @@
-package tech.letscode.imagereducer;
+package tech.letscode.imagereducer.implementation.view;
+
+import tech.letscode.imagereducer.OutputView;
 
 import javax.annotation.Nonnull;
 import java.io.File;

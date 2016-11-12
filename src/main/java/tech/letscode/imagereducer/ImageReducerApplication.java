@@ -1,5 +1,9 @@
 package tech.letscode.imagereducer;
 
+import tech.letscode.imagereducer.exception.ImageReducerApplicationException;
+import tech.letscode.imagereducer.exception.ImageReducerException;
+import tech.letscode.imagereducer.exception.OutputFileResolverException;
+
 import javax.annotation.Nonnull;
 import java.io.File;
 

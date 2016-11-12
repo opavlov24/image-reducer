@@ -1,10 +1,13 @@
-package tech.letscode.imagereducer;
+package tech.letscode.imagereducer.implementation.resolver;
+
+import tech.letscode.imagereducer.OutputFileResolver;
+import tech.letscode.imagereducer.exception.OutputFileResolverException;
 
 import javax.annotation.Nonnull;
 import java.io.File;
 import java.io.IOException;
 
-import static tech.letscode.imagereducer.DirectoryUtils.pathWithoutFilename;
+import static tech.letscode.imagereducer.util.DirectoryUtils.pathWithoutFilename;
 
 public class SimpleOutputFileResolver implements OutputFileResolver
 {

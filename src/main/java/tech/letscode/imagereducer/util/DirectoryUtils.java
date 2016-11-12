@@ -1,4 +1,4 @@
-package tech.letscode.imagereducer;
+package tech.letscode.imagereducer.util;
 
 import javax.annotation.Nonnull;
 import java.io.File;

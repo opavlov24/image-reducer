@@ -1,4 +1,4 @@
-package tech.letscode.imagereducer;
+package tech.letscode.imagereducer.implementation.resolver;
 
 import org.junit.After;
 import org.junit.Test;
@@ -8,8 +8,8 @@ import java.io.File;
 import static java.io.File.separator;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static tech.letscode.imagereducer.DirectoryUtils.pathWithoutFilename;
-import static tech.letscode.imagereducer.TestUtils.loadOriginalFile;
+import static tech.letscode.imagereducer.util.DirectoryUtils.pathWithoutFilename;
+import static tech.letscode.imagereducer.util.TestUtils.loadOriginalFile;
 
 public class SimpleOutputFileResolverTest
 {

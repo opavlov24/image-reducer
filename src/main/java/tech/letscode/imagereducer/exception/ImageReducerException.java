@@ -1,4 +1,4 @@
-package tech.letscode.imagereducer;
+package tech.letscode.imagereducer.exception;
 
 import java.io.IOException;
 

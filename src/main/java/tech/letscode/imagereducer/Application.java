@@ -1,5 +1,11 @@
 package tech.letscode.imagereducer;
 
+import tech.letscode.imagereducer.implementation.CommandLineConfiguration;
+import tech.letscode.imagereducer.implementation.reducer.SimpleImageReducer;
+import tech.letscode.imagereducer.implementation.resolver.SimpleOutputFileResolver;
+import tech.letscode.imagereducer.implementation.scanner.SimpleDirectoryScanner;
+import tech.letscode.imagereducer.implementation.view.ConsoleOutputView;
+
 public class Application
 {
     private static final DirectoryScanner DIRECTORY_SCANNER = new SimpleDirectoryScanner();

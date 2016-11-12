@@ -1,6 +1,7 @@
-package tech.letscode.imagereducer;
+package tech.letscode.imagereducer.implementation;
 
 import org.junit.Test;
+import tech.letscode.imagereducer.ImageReducerConfiguration;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;

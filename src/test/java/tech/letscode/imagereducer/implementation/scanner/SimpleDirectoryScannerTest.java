@@ -1,4 +1,4 @@
-package tech.letscode.imagereducer;
+package tech.letscode.imagereducer.implementation.scanner;
 
 import org.junit.Test;
 
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertTrue;
-import static tech.letscode.imagereducer.TestUtils.rootDirectory;
+import static tech.letscode.imagereducer.util.TestUtils.rootDirectory;
 
 public class SimpleDirectoryScannerTest
 {

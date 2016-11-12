@@ -3,6 +3,10 @@ package tech.letscode.imagereducer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import tech.letscode.imagereducer.exception.ImageReducerApplicationException;
+import tech.letscode.imagereducer.exception.ImageReducerException;
+import tech.letscode.imagereducer.exception.OutputFileResolverException;
+import tech.letscode.imagereducer.implementation.scanner.StubDirectoryScanner;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,7 +14,7 @@ import java.io.IOException;
 import static org.apache.commons.io.FileUtils.deleteQuietly;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
-import static tech.letscode.imagereducer.TestUtils.*;
+import static tech.letscode.imagereducer.util.TestUtils.*;
 
 public class ImageReducerApplicationTest
 {
