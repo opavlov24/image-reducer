@@ -1,4 +1,4 @@
-= Image-reducer
+= Image-reducer image:https://travis-ci.org/opavlov24/image-reducer.svg?branch=master["Build Status", link="https://travis-ci.org/opavlov24/image-reducer"]
 
 Image-reducer is a Java application that created to make easy to compress a large number of images.
 
