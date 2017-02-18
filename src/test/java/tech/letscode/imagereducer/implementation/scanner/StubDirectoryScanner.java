@@ -2,8 +2,6 @@ package tech.letscode.imagereducer.implementation.scanner;
 
 import tech.letscode.imagereducer.DirectoryListener;
 import tech.letscode.imagereducer.DirectoryScanner;
-
-import javax.annotation.Nonnull;
 import java.io.File;
 
 public class StubDirectoryScanner implements DirectoryScanner
@@ -19,13 +17,13 @@ public class StubDirectoryScanner implements DirectoryScanner
     }
 
     @Override
-    public void scan(@Nonnull String rootDirectory, boolean recursively, String... extensions)
+    public void scan(String rootDirectory, boolean recursively, String... extensions)
     {
         listener.acceptFile(this.file);
     }
 
     @Override
-    public void addDirectoryListener(@Nonnull DirectoryListener listener)
+    public void addDirectoryListener(DirectoryListener listener)
     {
         this.listener = listener;
     }

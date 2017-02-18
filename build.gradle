@@ -1,17 +1,6 @@
-buildscript {
-    repositories {
-        maven { url 'http://repo.spring.io/plugins-release' }
-    }
-    dependencies {
-        classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.7'
-    }
-}
-
 apply plugin: 'application'
 apply plugin: 'checkstyle'
 apply plugin: 'java'
-apply plugin: 'propdeps'
-apply plugin: 'propdeps-idea'
 
 repositories {
     mavenCentral()
@@ -20,12 +9,12 @@ repositories {
 mainClassName = "tech.letscode.imagereducer.Application"
 
 dependencies {
-    provided 'org.projectlombok:lombok:1.16.+'
-    provided 'com.google.code.findbugs:jsr305:3.+'
+    compileOnly 'org.projectlombok:lombok:1.16.+'
+    compileOnly 'com.google.code.findbugs:jsr305:3.+'
 
+    compile 'commons-cli:commons-cli:1.3.+'
+    compile 'commons-io:commons-io:2.+'
     compile 'org.apache.commons:commons-lang3:3.+'
-    compile 'commons-cli:commons-cli:1.3.1'
-    compile 'commons-io:commons-io:2.5'
     compile 'org.slf4j:slf4j-api:1.7.21'
 
     testCompile 'junit:junit:4.12'
