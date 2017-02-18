@@ -1,6 +1,7 @@
 package tech.letscode.imagereducer.implementation.reducer;
 
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang3.Validate;
 import tech.letscode.imagereducer.ImageReducer;
 import tech.letscode.imagereducer.exception.ImageReducerException;
 
@@ -19,9 +20,16 @@ import static org.apache.commons.io.IOUtils.closeQuietly;
 
 public class SimpleImageReducer implements ImageReducer
 {
+    private static final float MIN_VALUE_OF_QUALITY = 0;
+
+    private static final float MAX_VALUE_OF_QUALITY = 1;
+
     @Override
     public void reduce(@Nonnull File inImage, @Nonnull File outImage, float quality)
     {
+        Validate.notNull(inImage, "inImage is required");
+        Validate.notNull(outImage, "outImage is required");
+        Validate.exclusiveBetween(MIN_VALUE_OF_QUALITY, MAX_VALUE_OF_QUALITY, quality);
         ImageWriter imageWriter = null;
         try
         {

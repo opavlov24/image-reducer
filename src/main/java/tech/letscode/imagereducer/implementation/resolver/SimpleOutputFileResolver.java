@@ -1,5 +1,6 @@
 package tech.letscode.imagereducer.implementation.resolver;
 
+import org.apache.commons.lang3.Validate;
 import tech.letscode.imagereducer.OutputFileResolver;
 import tech.letscode.imagereducer.exception.OutputFileResolverException;
 
@@ -11,17 +12,19 @@ import static tech.letscode.imagereducer.util.DirectoryUtils.pathWithoutFilename
 
 public class SimpleOutputFileResolver implements OutputFileResolver
 {
-    private final String innerDirectoryName;
+    private final String outputDirectory;
 
-    public SimpleOutputFileResolver(@Nonnull String innerDirectoryName)
+    public SimpleOutputFileResolver(@Nonnull String outputDirectory)
     {
         super();
-        this.innerDirectoryName = innerDirectoryName;
+        Validate.notNull(outputDirectory, "outputDirectory is required");
+        this.outputDirectory = outputDirectory;
     }
 
     @Override
     public File resolveFileBasedOnOriginal(@Nonnull File originalFile)
     {
+        Validate.notNull(originalFile, "originalFile is required");
         File outputFile = new File(buildPathToOutputFile(originalFile));
         try
         {
@@ -37,7 +40,7 @@ public class SimpleOutputFileResolver implements OutputFileResolver
     private String buildPathToOutputFile(File originalFile)
     {
         String pathToOriginalFile = pathWithoutFilename(originalFile);
-        return pathToOriginalFile + File.separator + this.innerDirectoryName + File.separator +
+        return pathToOriginalFile + File.separator + this.outputDirectory + File.separator +
         originalFile.getName();
     }
 }

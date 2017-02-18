@@ -14,7 +14,7 @@ public class SimpleDirectoryScannerTest
     @Test
     public void ifExtensionsAreNotSetReturnsAllFilesInDirectory() throws Exception
     {
-        SimpleDirectoryScanner scanner = new SimpleDirectoryScanner();
+        SimpleDirectoryScanner scanner = scanner();
         List<File> foundFiles = new ArrayList<>();
         scanner.addDirectoryListener(foundFiles::add);
         scanner.scan(rootDirectory(), true);
@@ -24,12 +24,17 @@ public class SimpleDirectoryScannerTest
     @Test
     public void ifExtensionIsSetReturnsOnlyMatchedFiles()
     {
-        SimpleDirectoryScanner scanner = new SimpleDirectoryScanner();
+        SimpleDirectoryScanner scanner = scanner();
         List<File> foundFiles = new ArrayList<>();
         scanner.addDirectoryListener(foundFiles::add);
         scanner.scan(rootDirectory(), true, "jpeg");
         assertTrue(foundFiles.size() == 1);
         File foundFile = foundFiles.get(0);
         assertTrue(foundFile.getName().equalsIgnoreCase("notReducedImage.jpeg"));
+    }
+
+    private SimpleDirectoryScanner scanner()
+    {
+        return new SimpleDirectoryScanner();
     }
 }
