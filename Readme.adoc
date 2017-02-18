@@ -7,7 +7,7 @@ Image-reducer is a Java application that created to make easy to compress a larg
 To build the application and create the jar archive you should:
 
 1. Clone this repository
-2. Open terminal and change current directory to the project directory
+2. Open terminal and change a current directory to the project directory
 3. Do the below command
 
 [indent=0]
@@ -15,17 +15,17 @@ To build the application and create the jar archive you should:
 $ ./gradlew clean build
 ----
 
-In the directory
+after that in the directory
 
 [indent=0]
 ----
      {project_dir}/build/distributions
 ----
 
-will be created two archive files (.zip and .tar) that contain the compiled application.
+will be created two archive files (with .zip and .tar extensions) that contain the compiled application.
 
 == How to use
 
-1. Extract the image-reducer folder from one of the archives
+1. Extract the image-reducer folder from the one of the archives
 2. Open terminal and change current directory to image-reducer/bin
-3. Run ./image-reducer and read the help
+3. Run ./image-reducer (or image-reducer.bat if you're using Windows) and read instructions
