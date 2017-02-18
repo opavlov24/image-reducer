@@ -7,11 +7,13 @@ import javax.annotation.Nonnull;
 @Setter
 public class ImageReducerConfiguration
 {
+    public static final float DEFAULT_QUALITY = 0.5f;
+
     private String rootDirectory;
 
     private boolean recursively;
 
-    private float quality = 0.5f;
+    private float quality = DEFAULT_QUALITY;
 
     private String[] extensions;
 

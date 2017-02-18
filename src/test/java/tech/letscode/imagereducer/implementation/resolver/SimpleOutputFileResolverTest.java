@@ -35,7 +35,8 @@ public class SimpleOutputFileResolverTest
     @After
     public void clean()
     {
-        if (this.outputFile != null) {
+        if (this.outputFile != null)
+        {
             this.outputFile.delete();
             this.outputFile.getParentFile().delete();
         }

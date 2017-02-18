@@ -7,7 +7,7 @@ import java.nio.file.Files;
 
 public final class TestUtils
 {
-    private final static String ROOT_DIRECTORY = "image";
+    private static final String ROOT_DIRECTORY = "image";
 
     private TestUtils()
     {
@@ -17,7 +17,8 @@ public final class TestUtils
     public static String rootDirectory()
     {
         URL resource = TestUtils.class.getClassLoader().getResource(ROOT_DIRECTORY);
-        if (resource == null) {
+        if (resource == null)
+        {
             throw new IllegalStateException("Root directory ('" + ROOT_DIRECTORY + "') has not been found");
         }
         return resource.getFile();
@@ -26,7 +27,8 @@ public final class TestUtils
     public static File loadOriginalFile()
     {
         URL resource = TestUtils.class.getClassLoader().getResource(ROOT_DIRECTORY + "/notReducedImage.jpeg");
-        if (resource == null) {
+        if (resource == null)
+        {
             throw new IllegalStateException("Original file has not been found in the test resources");
         }
         return new File(resource.getFile());

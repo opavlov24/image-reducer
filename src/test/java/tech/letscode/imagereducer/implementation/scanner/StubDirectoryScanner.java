@@ -9,6 +9,7 @@ import java.io.File;
 public class StubDirectoryScanner implements DirectoryScanner
 {
     private final File file;
+
     private DirectoryListener listener;
 
     public StubDirectoryScanner(File file)

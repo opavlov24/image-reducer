@@ -12,6 +12,8 @@ import static tech.letscode.imagereducer.util.TestUtils.temporaryFile;
 
 public class SimpleImageReducerTest
 {
+    private static final float QUALITY = 0.1f;
+
     @Test
     public void reduce() throws URISyntaxException, IOException
     {
@@ -19,7 +21,7 @@ public class SimpleImageReducerTest
         File originalImage = loadOriginalFile();
         long originalSize = originalImage.length();
         File compressedImage = temporaryFile();
-        imageReducer.reduce(originalImage, compressedImage, 0.1f);
+        imageReducer.reduce(originalImage, compressedImage, QUALITY);
         long compressedSize = compressedImage.length();
         assertTrue(compressedSize != 0);
         assertTrue(compressedSize < originalSize);

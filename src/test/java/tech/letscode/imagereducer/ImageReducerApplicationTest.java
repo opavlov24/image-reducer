@@ -13,8 +13,14 @@ import java.io.IOException;
 
 import static org.apache.commons.io.FileUtils.deleteQuietly;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
-import static tech.letscode.imagereducer.util.TestUtils.*;
+import static org.mockito.ArgumentMatchers.anyFloat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.doThrow;
+import static tech.letscode.imagereducer.util.TestUtils.loadOriginalFile;
+import static tech.letscode.imagereducer.util.TestUtils.rootDirectory;
+import static tech.letscode.imagereducer.util.TestUtils.temporaryFile;
 
 public class ImageReducerApplicationTest
 {
